@@ -1,0 +1,126 @@
+body{
+    background-image: url(medium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #646464;
+}
+
+#countdown-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#startCountdown{
+    padding: 20px 40px;
+    border: 2px solid white;
+    background-color: #FFCE45;
+    color: white;
+    border-radius: 20px;
+    margin-top: 50px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 26px;
+}
+
+.instruction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: grey;
+    opacity: 0.7;
+    border-radius: 20px;
+}
+
+p{
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 26px;
+}
+
+#countdown{
+    padding: 30px 60px;
+    border: 2px solid #FFCE45;
+    background-color: white;
+    color: grey;
+    border-radius: 20px;
+    margin-top: 100px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+}
+
+.percentage_positioning{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.percentage_container {
+    width: 603px;
+    height: 80px;
+    background-color: #ddd;
+    border: 2px solid grey;
+}
+
+.percentage {
+    width: 10%; background-color: #FFCE45;
+    height: 100%;
+}
+
+@media all and (max-width: 1024px){
+
+    #countdown{
+        margin-top: 50px;
+    }
+
+    .percentage_positioning{
+        margin-top: 0;
+    }
+}
+
+@media all and (max-width: 820px){
+
+    #countdown{
+        margin-top: 100px;
+    }
+
+    .percentage_positioning{
+        margin-top: 50px;
+    }
+
+    body{
+        background-position: center 200px;
+    }
+}
+
+@media all and (max-width: 695px){
+    .percentage_container {
+        width: 403px;
+    }
+}
+
+@media all and (max-width: 620px){
+    p{
+        font-size: 20px;
+    }
+
+    #startCountdown{
+        margin-top: 90px;
+    }
+}
+
+@media all and (max-width: 490px){
+    .percentage_container {
+        width: 303px;
+    }
+
+    p{
+        text-align: center;
+    }
+
+}
+
+@media all and (max-width: 330px){
+    .percentage_container {
+        width: 203px;
+    }
+}
