@@ -5,8 +5,8 @@ Can be seen on Netlify:
 https://my-eggs-timer.netlify.app/
 
 ## File structure 
-5 folders, one for each number of minutes, each containing its own .js file, the main logic file:
-'firmly hard', 'hard', 'medium', 'soft', 'very soft'
+5 folders, one for each number of minutes, each containing its own .js file (the main logic file):  
+'firmly hard', 'hard', 'medium', 'soft', 'very soft'  
 each folder contains its own .css (style) file, .html file, .mp3 file (alarm sound) and .jpg file (background image).  
 
 index.html - main html file - to use the timer, open this file on browser window  
@@ -26,9 +26,11 @@ Created by Ekaterina Tereshko as an individual project during the coding program
 - if you need to renew the countdown, renew the page and click the 'Start' button again
 
 ### Logic side
-
-For two games logic is similar and is described in two blocks, one for each of two games that the user can choose from.  
-All the constants and functions are named accordingly in both games with a difference in number 1 or 2 only in the end of the name.  
+For all 5 timers the logic is similar.  
+The initial constant _timer_ of 10, 8, 6, 4 or 3 minutes is defined.  
+The _amountTime_ variable is also initially defined as the minutes value multiplied to 60 in order to work with the seconds value.  
+When the _start_ element (the 'Start' button) is clicked, the _calculateTime()_ function is called.  
+The function selects the _countdown_ element, which represents the paragraph that shows the time remained. The function then works with _minutes_ and _seconds_ variables: these are renewed once per second
 
 The constants represent the following items (an example for game 1):   
 ***input1*** - an input field where the user should enter the suggested number for the first game,   
