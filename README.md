@@ -1,13 +1,13 @@
-# eggs-timer
+# my-eggs-timer
 
 My individual coding project.  
 Can be seen on Netlify:  
 https://my-eggs-timer.netlify.app/
 
 ## File structure 
-5 folders, one for each number of minutes, each containing its own .js file (the main logic file):  
-'firmly hard', 'hard', 'medium', 'soft', 'very soft'  
-each folder contains its own .css (style) file, .html file, .mp3 file (alarm sound) and .jpg file (background image).  
+5 folders, one for each number of minutes, each containing its own .js file (the logic file):  
+'firmly hard', 'hard', 'medium', 'soft', 'very soft' folders. 
+Each folder contains its own .css (style) file, .html file, .mp3 file (alarm sound) and .jpg file (background image).  
 
 index.html - main html file - to use the timer, open this file on browser window  
 style.css - main styling file  
@@ -27,21 +27,16 @@ Created by Ekaterina Tereshko as an individual project during the coding program
 
 ### Logic side
 For all 5 timers the logic is similar.  
-The initial constant _timer_ of 10, 8, 6, 4 or 3 minutes is defined.  
-The _amountTime_ variable is also initially defined as the minutes value multiplied to 60 in order to work with the seconds value.  
-When the _start_ element (the 'Start' button) is clicked, the _calculateTime()_ function is called.  
-The function selects the _countdown_ element, which represents the paragraph that shows the time remained. The function then works with _minutes_ and _seconds_ variables: these are renewed once per second
-
-The constants represent the following items (an example for game 1):   
-***input1*** - an input field where the user should enter the suggested number for the first game,   
-***buttonGame1*** - the button that the user should click in order to start the game or enter the next suggested number,  
-***answer1*** - a random number from 1 to 20 generated using Math.random  
-
-***input2, buttonGame2, answer2*** - similar constants for the second game accordingly, given that the numbers range in the second game is from 1 to 100.  
-The constants described above are defined when the page is loaded, so the random numbers for both games (constants answer1 and answer2) are defined before any game starts.  
-
-When the user clicks the _buttonGame1_, the _playGame()_ function is called. The function receives the value of the constant _input1_ (the number currently entered by the user in the input field) and puts it into the constant _userNumber1_. Before checking if the number is guessed, the functions also checks if the number meets the range requirement (is not a NaN and also is not less than 1 and not higher than 20 for the first game or 100 for the second game). In case the requirement is not met, an alert appears and asks the user to enter another number.   
-After a suitable suggested number is received, the function is comparing the user's number to the _answer1_ constant. In case the value of _userNumber1_ is lower than the answer1 const, the alert 'My number is higher!' is shown. In case the value of _userNumber1_ is higher than the answer1 const, the alert 'My number is lower!' is shown. After each try the user enters another number and clicks the _buttonGame1_ or Enter key, which calls the _playGame()_ function again. In case there is a match, the user wins and the game is over. The page needs to be reloaded in order to get new random numbers and play again.
+Initially the _timer_ constant of 10, 8, 6, 4 or 3 minutes is defined.  
+The _amountTime_ variable is also initially defined as the _timer_ value multiplied to 60 in order to work with the seconds value.  
+When the _start_ element (the 'Start' button) is clicked by the user, the _calculateTime()_ function is called.  
+The function selects the _countdown_ element, which represents the paragraph that shows the time remained. The function then works with _minutes_ and _seconds_ variables: these are calculated based on the current value of _amountTime_, which in turn is renewed once per second (it decreases by one second each time the function is called using setTimeout method).  
+When the _amountTime reaches 0 and is decreased to -1, the timer stops by interrupting the repeatedly called _calculateTime()_ function
+  if(amountTime < 0){
+        amountTime = 0;
+        stopTimer();
+        timeoutSound();
+    }
 
 **Thanks for your time exploring my project!**
 
