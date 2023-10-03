@@ -32,11 +32,14 @@ The _amountTime_ variable is also initially defined as the _timer_ value multipl
 
 When the _start_ element (the 'Start' button) is clicked by the user, the _calculateTime()_ function is called.  
 The function accesses the _countdown_ element, which represents the paragraph that shows the time remained.  
-The function then works with _minutes_ and _seconds_ variables: these are calculated based on the current value of _amountTime_, which in turn is renewed once per second (it decreases by one second each time the function is called using the setTimeout method).  
+The function then works with _minutes_ and _seconds_ variables: these are calculated based on the current value of _amountTime_.
+With the help of DOM property _textContent_, the minutes and seconds are displayed inside the _countdown_ element.
+After displaying the current values of minutes and seconds, the function applys _decrement (--)_ to the _amountTime_ and also adds more width (in accordance with the percentages) to the progress bar.  
+Then the _setTimeout()_ method is used, which calls the _calculateTime()_ function again in 1 second and the process repeats with the function being called again each second. The minutes and seconds text are also updated once per second and displayed correctly accordingly.  
 
 When the _amountTime_ reaches 0 and is decreased to -1 within the current function execution, the timer stops by calling the _stopTimer()_ function (it clears the setTimeout). In addition, the _timeoutSound()_ function is called which is responsible for playing the .mp3 file with the alarm sound.
 
-In order to use the timer again, the page needs to be reloaded
+In 10 seconds after the timer stops, the _renewPage()_ function is called using _setTimeout()_, this leads to the page reloading and the timer is ready for use again
 
 **Thanks for your time exploring my project!**
 
