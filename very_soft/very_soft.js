@@ -1,4 +1,4 @@
-const timer = 3; 
+const timer = 1; 
 let amountTime = timer * 60;
 
 const start = document.querySelector('#startCountdown');
@@ -38,7 +38,12 @@ function stopTimer(){
 }
 
 function timeoutSound() {
-    var audio = new Audio();
-    audio.src = 'budilnik.mp3';
+    let audio = new Audio();
+    audio.src = 'alarm.mp3';
     audio.autoplay = true;
+    setTimeout(renewPage, 10000);
+}
+
+function renewPage(){
+    location.reload();
 }

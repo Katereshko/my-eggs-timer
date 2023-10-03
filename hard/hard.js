@@ -38,7 +38,12 @@ function stopTimer(){
 }
 
 function timeoutSound() {
-    var audio = new Audio();
-    audio.src = 'budilnik.mp3';
-    audio.autoplay = true; 
+    let audio = new Audio();
+    audio.src = 'alarm.mp3';
+    audio.autoplay = true;
+    setTimeout(renewPage, 10000);
+}
+
+function renewPage(){
+    location.reload();
 }
