@@ -4,6 +4,7 @@ let amountTime = timer * 60;
 const start = document.querySelector('#startCountdown');
 start.addEventListener('click', calculateTime);
 let timerID;
+let timerRenewing;
 let a = 0;
 
 function calculateTime(){
@@ -44,5 +45,6 @@ function timeoutSound() {
 }
 
 function renewPage(){
+    clearTimeout(timerRenewing);
     location.reload();
 }
