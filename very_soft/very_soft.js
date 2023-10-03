@@ -1,4 +1,4 @@
-const timer = 1; 
+const timer = 3; 
 let amountTime = timer * 60;
 
 const start = document.querySelector('#startCountdown');
