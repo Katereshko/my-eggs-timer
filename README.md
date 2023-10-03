@@ -5,7 +5,7 @@ Can be seen on Netlify:
 https://my-eggs-timer.netlify.app/
 
 ## File structure 
-5 folders, one for each number of minutes, each containing its own .js file (the logic file):  
+5 folders, one for each time condition, each containing its own .js file (the logic file):  
 'firmly hard', 'hard', 'medium', 'soft', 'very soft' folders. 
 Each folder contains its own .css (style) file, .html file, .mp3 file (alarm sound) and .jpg file (background image).  
 
@@ -29,14 +29,14 @@ Created by Ekaterina Tereshko as an individual project during the coding program
 For all 5 timers the logic is similar.  
 Initially the _timer_ constant of 10, 8, 6, 4 or 3 minutes is defined.  
 The _amountTime_ variable is also initially defined as the _timer_ value multiplied to 60 in order to work with the seconds value.  
+
 When the _start_ element (the 'Start' button) is clicked by the user, the _calculateTime()_ function is called.  
-The function selects the _countdown_ element, which represents the paragraph that shows the time remained. The function then works with _minutes_ and _seconds_ variables: these are calculated based on the current value of _amountTime_, which in turn is renewed once per second (it decreases by one second each time the function is called using setTimeout method).  
-When the _amountTime reaches 0 and is decreased to -1, the timer stops by interrupting the repeatedly called _calculateTime()_ function
-  if(amountTime < 0){
-        amountTime = 0;
-        stopTimer();
-        timeoutSound();
-    }
+The function accesses the _countdown_ element, which represents the paragraph that shows the time remained.  
+The function then works with _minutes_ and _seconds_ variables: these are calculated based on the current value of _amountTime_, which in turn is renewed once per second (it decreases by one second each time the function is called using the setTimeout method).  
+
+When the _amountTime_ reaches 0 and is decreased to -1 within the current function execution, the timer stops by calling the _stopTimer()_ function (it clears the setTimeout). In addition, the _timeoutSound()_ function is called which is responsible for playing the .mp3 file with the alarm sound.
+
+In order to use the timer again, the page needs to be reloaded
 
 **Thanks for your time exploring my project!**
 
